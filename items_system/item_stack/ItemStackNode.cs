@@ -1,11 +1,11 @@
 using Godot;
 using System;
 
-public partial class ItemNode : Node2D
+public partial class ItemStackNode : Node2D
 {
 	[Export] protected Item itemResource;
 	[Export] protected Sprite2D sprite;
-	[Export] protected Label nameLabel;
+	[Export] protected Label nameLabel, amountLabel;
 	[Export] protected Area2D hoverArea;
 
 	public override void _Ready()
@@ -24,5 +24,9 @@ public partial class ItemNode : Node2D
 	public void OnHoverAreaMouseExited()
 	{
 		nameLabel.Visible = false;
+	}
+	public Item IncreaseItemAmount(int increment)
+	{
+		return null;
 	}
 }

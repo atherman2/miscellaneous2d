@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dam62vg60nfgi"]
 
-[ext_resource type="Script" path="res://items_system/item/Item.cs" id="1_cphsn"]
+[ext_resource type="Script" path="res://items_system/Item.cs" id="1_cphsn"]
 [ext_resource type="Texture2D" uid="uid://cvp5tcj5lsdk0" path="res://items_system/items/apple.png" id="2_xp5yj"]
 
 [resource]
