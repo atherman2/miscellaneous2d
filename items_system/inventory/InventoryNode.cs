@@ -5,7 +5,7 @@ public partial class InventoryNode : Node
 {
 	[Export] protected Inventory inventoryResource;
 	
-	public Item GetItemAt(int itemIndex)
+	public ItemStack GetItemStackAt(int itemIndex)
 	{
 		if(itemIndex < inventoryResource.size)
 			

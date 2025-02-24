@@ -1,8 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cx0a2y5a7le8c"]
+[gd_scene load_steps=5 format=3 uid="uid://cx0a2y5a7le8c"]
 
 [ext_resource type="PackedScene" uid="uid://1160cjccekl6" path="res://items_system/item_stack/itemStack.tscn" id="1_lb40d"]
 [ext_resource type="Resource" uid="uid://dam62vg60nfgi" path="res://items_system/items/apple.tres" id="2_jsjyl"]
+[ext_resource type="Script" path="res://items_system/item_stack/ItemStack.cs" id="3_q2ppb"]
+
+[sub_resource type="Resource" id="Resource_53ol2"]
+script = ExtResource("3_q2ppb")
+item = ExtResource("2_jsjyl")
+amount = 16
 
 [node name="ItemStackTest" instance=ExtResource("1_lb40d")]
 position = Vector2(990, 488)
-itemResource = ExtResource("2_jsjyl")
+itemStack = SubResource("Resource_53ol2")
