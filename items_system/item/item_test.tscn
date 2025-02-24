@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx0a2y5a7le8c"]
+
+[ext_resource type="PackedScene" uid="uid://1160cjccekl6" path="res://items_system/item/item.tscn" id="1_qw514"]
+[ext_resource type="Resource" uid="uid://dam62vg60nfgi" path="res://items_system/items/apple.tres" id="2_8luul"]
+
+[node name="ItemTest" instance=ExtResource("1_qw514")]
+position = Vector2(990, 488)
+itemResource = ExtResource("2_8luul")
+
+[node name="Label" parent="Control" index="0"]
+layout_mode = 0

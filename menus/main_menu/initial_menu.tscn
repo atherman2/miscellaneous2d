@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://byftxavexgr5b"]
 
-[ext_resource type="Script" path="res://scripts/InitialMenu.cs" id="1_1amlf"]
+[ext_resource type="Script" path="res://menus/main_menu/InitialMenu.cs" id="1_1amlf"]
 
 [node name="InitialMenu" type="CanvasLayer" node_paths=PackedStringArray("playButton", "settingsButton", "exitButton")]
 script = ExtResource("1_1amlf")

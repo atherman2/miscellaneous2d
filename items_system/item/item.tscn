@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://1160cjccekl6"]
+
+[ext_resource type="Script" path="res://items_system/item/ItemNode.cs" id="1_67hpm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qr4df"]
+radius = 12.0
+
+[node name="Item" type="Node2D" node_paths=PackedStringArray("sprite", "nameLabel", "hoverArea")]
+script = ExtResource("1_67hpm")
+sprite = NodePath("Sprite2D")
+nameLabel = NodePath("Control/Label")
+hoverArea = NodePath("Area2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="Control"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_qr4df")
