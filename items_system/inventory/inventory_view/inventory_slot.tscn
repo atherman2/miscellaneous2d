@@ -1,5 +1,8 @@
-[gd_scene format=3 uid="uid://hq12v1peexlq"]
+[gd_scene load_steps=2 format=3 uid="uid://hq12v1peexlq"]
+
+[ext_resource type="Script" path="res://items_system/inventory/inventory_view/InventorySlot.cs" id="1_nf1q7"]
 
 [node name="InventorySlot" type="Panel"]
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_nf1q7")

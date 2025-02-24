@@ -1,8 +1,9 @@
 using Godot;
 using System;
 
+[GlobalClass]
 public partial class Inventory : Resource
 {
-    public ItemStack[] itemStacks;
-    public int size;
+    [Export] public ItemStack[] itemStacks;
+    [Export] public int size;
 }

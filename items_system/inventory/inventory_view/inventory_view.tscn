@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7ocr0prtnwc2"]
+
+[ext_resource type="Script" path="res://items_system/inventory/inventory_view/InventoryView.cs" id="1_pm4lp"]
+[ext_resource type="PackedScene" uid="uid://hq12v1peexlq" path="res://items_system/inventory/inventory_view/inventory_slot.tscn" id="2_ydfw8"]
+
+[node name="InventoryView" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pm4lp")
+inventorySlotPackedScene = ExtResource("2_ydfw8")

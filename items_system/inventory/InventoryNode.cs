@@ -15,4 +15,9 @@ public partial class InventoryNode : Node
 
 			return null;
 	}
+
+	public int GetSize()
+	{
+		return inventoryResource.size;
+	}
 }

@@ -3,7 +3,7 @@ using System;
 
 public partial class ItemStackNode : Node2D
 {
-	[Export] protected ItemStack itemStack;
+	[Export] public ItemStack itemStack;
 	[Export] protected Sprite2D sprite;
 	[Export] protected Label nameLabel, amountLabel;
 	[Export] protected Area2D hoverArea;
@@ -56,5 +56,21 @@ public partial class ItemStackNode : Node2D
 	{
 		itemStack.amount = newAmount;
 		UpdateAmountLabel();
+	}
+	public void UpdateView()
+	{
+		if(itemStack.item.id == "empty")
+		{
+			hoverArea.Monitoring = false;
+			sprite.Visible = false;
+			nameLabel.Text = "";
+			UpdateAmountLabel();
+		}
+		else
+		{
+			sprite.Texture = itemStack.item.texture;
+			nameLabel.Text = itemStack.item.name;
+			UpdateAmountLabel();
+		}
 	}
 }
