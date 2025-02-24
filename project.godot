@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="miscellaneous2D"
-run/main_scene="res://items_system/item_stack/itemStack_test.tscn"
+run/main_scene="res://items_system/item_stack/item_stack_test.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 

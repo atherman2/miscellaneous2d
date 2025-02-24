@@ -9,7 +9,7 @@ public partial class InventoryNode : Node
 	{
 		if(itemIndex < inventoryResource.size)
 			
-			return inventoryResource.items[itemIndex];
+			return inventoryResource.itemStacks[itemIndex];
 		
 		else
 

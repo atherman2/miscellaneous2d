@@ -3,6 +3,6 @@ using System;
 
 public partial class Inventory : Resource
 {
-    public ItemStack[] items;
+    public ItemStack[] itemStacks;
     public int size;
 }
