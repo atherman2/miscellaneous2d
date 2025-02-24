@@ -36,8 +36,25 @@ public partial class ItemStackNode : Node2D
 
 			amountLabel.Text = "";
 	}
-	public Item IncreaseItemAmount(int increment)
+	public ItemStack IncreaseAmount(int increment)
 	{
-		return null;
+		if((itemStack.amount + increment) > itemStack.item.stackSize)
+		{
+			ItemStack leftOver = new();
+			leftOver.item = itemStack.item;
+			leftOver.amount = itemStack.amount + increment - itemStack.item.stackSize;
+			SetAmount(itemStack.item.stackSize);
+			return leftOver;
+		}
+		else
+		{
+			SetAmount(itemStack.amount + increment);
+			return null;
+		}
+	}
+	protected void SetAmount(int newAmount)
+	{
+		itemStack.amount = newAmount;
+		UpdateAmountLabel();
 	}
 }
