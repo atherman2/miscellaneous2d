@@ -13,21 +13,25 @@ public partial class InventoryView : Control
 		for(int slotIndex = 0; slotIndex < amount; slotIndex++)
 		{
 			inventorySlots[slotIndex] = inventorySlotPackedScene.Instantiate<InventorySlot>();
-			inventorySlots[slotIndex].itemStackNode = null;
+			inventorySlots[slotIndex].SetItemStackNode(null);
 			gridContainer.AddChild(inventorySlots[slotIndex]);
 		}
 	}
 	public void ChangeInventorySlotItem(int slotIndex, ItemStackNode newItemValue)
 	{
-		inventorySlots[slotIndex].AddChild(newItemValue);
-		inventorySlots[slotIndex].itemStackNode = newItemValue;
-		inventorySlots[slotIndex].itemStackNode.UpdateView();
+		newItemValue.UpdateView();
+		inventorySlots[slotIndex].SetItemStackNode(newItemValue);
 	}
 	public void UpdateView()
 	{
 		for(int slotIndex = 0; slotIndex < inventorySlots.Length; slotIndex++)
 		{
-			inventorySlots[slotIndex].itemStackNode.UpdateView();
+			InventorySlot inventorySlot = inventorySlots[slotIndex];
+			ItemStackNode itemStackNode = inventorySlot.GetItemStackNode();
+			if(itemStackNode != null)
+			{
+				itemStackNode.UpdateView();
+			}
 		}
 	}
 }

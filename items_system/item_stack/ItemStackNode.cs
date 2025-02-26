@@ -1,28 +1,28 @@
 using Godot;
 using System;
 
-public partial class ItemStackNode : Node2D
+public partial class ItemStackNode : Control
 {
 	[Export] public ItemStack itemStack;
 	[Export] protected Sprite2D sprite;
 	[Export] protected Label nameLabel, amountLabel;
-	[Export] protected Area2D hoverArea;
+	[Export] protected TextureButton hoverButton;
 
 	public override void _Ready()
 	{
 		sprite.Texture = itemStack.item.texture;
 		nameLabel.Text = itemStack.item.name;
 		UpdateAmountLabel();
-		hoverArea.MouseEntered += OnHoverAreaMouseEntered;
-		hoverArea.MouseExited += OnHoverAreaMouseExited;
+		hoverButton.MouseEntered += OnMouseEntered;
+		hoverButton.MouseExited += OnMouseExited;
 
 		base._Ready();
 	}
-	public void OnHoverAreaMouseEntered()
+	public void OnMouseEntered()
 	{
 		nameLabel.Visible = true;
 	}
-	public void OnHoverAreaMouseExited()
+	public void OnMouseExited()
 	{
 		nameLabel.Visible = false;
 	}
@@ -61,13 +61,13 @@ public partial class ItemStackNode : Node2D
 	{
 		if(itemStack.item.id == "empty")
 		{
-			hoverArea.Monitoring = false;
 			sprite.Visible = false;
 			nameLabel.Text = "";
 			UpdateAmountLabel();
 		}
 		else
 		{
+			sprite.Visible = true;
 			sprite.Texture = itemStack.item.texture;
 			nameLabel.Text = itemStack.item.name;
 			UpdateAmountLabel();

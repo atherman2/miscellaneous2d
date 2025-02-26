@@ -3,5 +3,18 @@ using System;
 
 public partial class InventorySlot : Panel
 {
-	public ItemStackNode itemStackNode;
+	[Export] protected CenterContainer centerContainer;
+	protected ItemStackNode itemStackNode;
+	public ItemStackNode GetItemStackNode()
+	{
+		return itemStackNode;
+	}
+	public void SetItemStackNode(ItemStackNode itemStackNode)
+	{
+		this.itemStackNode = itemStackNode;
+		if(itemStackNode != null)
+		{
+			centerContainer.AddChild(itemStackNode);
+		}
+	}
 }

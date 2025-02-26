@@ -10,6 +10,7 @@ public partial class InventoryController : Node2D
 	public override void _Ready()
 	{
 		inventoryView.SetupInventorySlots(inventoryNode.GetSize());
+		LoadInventoryView();
 
 		base._Ready();
 	}
@@ -26,5 +27,6 @@ public partial class InventoryController : Node2D
 				inventoryView.ChangeInventorySlotItem(itemIndex, itemStackNode);
 			}
 		}
+		inventoryView.UpdateView();
 	}
 }
