@@ -33,7 +33,14 @@ public partial class ItemStackNode : Control
 			hoverButton.Disabled = false;
 		}
 		nameLabel.Text = itemStack.item.name;
-		amountLabel.Text = $"{itemStack.amount}";
+		if(itemStack.amount > 1)
+		{	
+			amountLabel.Text = $"{itemStack.amount}";
+		}
+		else
+		{
+			amountLabel.Text = "";
+		}
 		sprite.Texture = itemStack.item.texture;
 	}
 }

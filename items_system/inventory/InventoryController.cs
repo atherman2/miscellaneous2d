@@ -18,7 +18,10 @@ public partial class InventoryController : Node2D
 		for(int itemIndex = 0; itemIndex < inventoryNode.GetSize(); itemIndex++)
 		{
 			ItemStack item = inventoryNode.GetItemStackAt(itemIndex);
-			inventoryView.ChangeInventorySlotItem(itemIndex, item);
+			if(item != null)
+			{
+				inventoryView.ChangeInventorySlotItem(itemIndex, item);
+			}
 		}
 	}
 }

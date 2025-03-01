@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://b1cdousipnrfv"]
+[gd_scene load_steps=11 format=3 uid="uid://b1cdousipnrfv"]
 
 [ext_resource type="PackedScene" uid="uid://cw6whidhqoiew" path="res://items_system/inventory/inventory_controller.tscn" id="1_rgx68"]
 [ext_resource type="PackedScene" uid="uid://ff2tnjimoqa4" path="res://items_system/inventory/inventory_view/player_inventory_view.tscn" id="2_1f8gn"]
 [ext_resource type="Resource" uid="uid://dam62vg60nfgi" path="res://items_system/items/apple.tres" id="2_h2dgi"]
 [ext_resource type="Script" path="res://items_system/item_stack/ItemStack.cs" id="3_7ukfh"]
 [ext_resource type="Script" path="res://items_system/inventory/Inventory.cs" id="4_ggkpb"]
+[ext_resource type="PackedScene" uid="uid://1160cjccekl6" path="res://items_system/item_stack/item_stack.tscn" id="6_wrn4d"]
 
 [sub_resource type="Resource" id="Resource_aqls6"]
 script = ExtResource("3_7ukfh")
@@ -38,3 +39,4 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 offset_right = 1920.0
 offset_bottom = 1000.0
+itemStackNodePackedScene = ExtResource("6_wrn4d")
