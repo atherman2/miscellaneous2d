@@ -63,6 +63,32 @@ public partial class Storage : Node
             return null;
         }
     }
+    public ItemStack TakeItem(Item item, int amount, bool fullStack)
+    {
+        ItemStack correspondentItem = FindItemStackBasedOnItem(item);
+        if(correspondentItem == null)
+        {
+            throw new WarningException("Trying to take an inexisting item from the target storage.");
+        }
+        else
+        {
+            if(correspondentItem.amount < amount)
+            {
+                throw new WarningException("Trying more than existing amount of an item from the target storage.");
+            }
+            else
+            {
+                correspondentItem.amount -= amount;
+                if(correspondentItem.amount == 0)
+                {
+                    items.Remove(correspondentItem);
+                }
+                ItemStack itemStackTaken = ItemStack.ItemStackCopy(correspondentItem);
+                correspondentItem.amount = amount;
+                return correspondentItem;
+            }
+        }
+    }
     public ItemStack FindItemStackBasedOnItem(Item item)
     {
         ItemStack correspondentItem = null;
